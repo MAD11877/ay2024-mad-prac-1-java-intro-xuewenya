@@ -46,7 +46,7 @@ public class Question5
       }
       if (frequency > maxFrequency){
         maxFrequency = frequency;
-        mode = number[i];
+        mode = numbers[i];
       }
     }
     
