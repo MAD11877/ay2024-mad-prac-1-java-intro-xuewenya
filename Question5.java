@@ -28,21 +28,24 @@ public class Question5
      
     Scanner in = new Scanner(System.in);
     int count = in.nextInt();
-    Num <integer, integer> Collection = new Num<>();
+    
+    HashMap<Integer, Integer> frequencyMap = new HashMap<>();
 
-    for(int i = 0; i < count; i++){
-      int num = in.nextIn();
-      Collection.put(num, Collection.getOrDefault(num, 0) + 1);
+    for (int i = 0; i < count; i++) {
+        int num = in.nextInt();
+        frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
     }
-
+    
     int mode = 0;
     int maxFrequency = 0;
-    for (int key : Collection.keySet()){
-      int frequency = Collection.get(key);
-      if (frequency > maxFrequency){
-        mode = key;
-        maxFrequency = frequency;
-      }
+    for (int key : frequencyMap.keySet()) {
+        int frequency = frequencyMap.get(key);
+        if (frequency > maxFrequency) {
+            mode = key;
+            maxFrequency = frequency;
+        }
+    }
+    
     System.out.println(mode);
   }
 }
