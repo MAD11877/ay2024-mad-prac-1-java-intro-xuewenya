@@ -27,6 +27,29 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
+    int num = in.nextInt();
+
+    int[] numbers = new int[num];
+
+    for (int i = 0; i < num; i++) {
+      numbers[i] = in.nextInt();
+    }
     
+    int mode = 0;
+    int maxFrequency = 0;
+    for (int i = 0; i < num; i++) {
+      int frequency = 0;
+      for(int j = 0; j < num; j++){
+        if (numbers[i] == numbers[j]){
+          frequency++;
+        }
+      }
+      if (frequency > maxFrequency){
+        maxFrequency = frequency;
+        mode = numbers[i];
+      }
+    }
+    
+    System.out.println(mode);
   }
 }
