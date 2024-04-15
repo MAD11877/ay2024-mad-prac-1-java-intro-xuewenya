@@ -12,8 +12,7 @@ public class Question3
      
     Scanner in = new Scanner(System.in);
     int num = in.nextInt();
-    int result = num * num;
-    System.out.printIn(result);
+    System.out.printIn(num * num);
     
   }
 }
