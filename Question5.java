@@ -27,23 +27,27 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
-    int count = in.nextInt();
-    
-    HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+    int num = in.nextInt();
 
-    for (int i = 0; i < count; i++) {
-        int num = in.nextInt();
-        frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+    int[] numbers = new int[num];
+
+    for (int i = 0; i < num; i++) {
+      numbers[i] = in.nextInt();
     }
     
     int mode = 0;
     int maxFrequency = 0;
-    for (int key : frequencyMap.keySet()) {
-        int frequency = frequencyMap.get(key);
-        if (frequency > maxFrequency) {
-            mode = key;
-            maxFrequency = frequency;
+    for (int i = 0; i < num; i++) {
+      int frequency = 0;
+      for(int j = 0; j < num; j++){
+        if (numbers[i] == numbers[j]){
+          frequency++;
         }
+      }
+      if (frequency > maxFrequency){
+        maxFrequency = frequency;
+        mode = number[i];
+      }
     }
     
     System.out.println(mode);
