@@ -18,4 +18,5 @@ public class Question2
   }
     public double getBMI(){
       return weight / (height * height);
+    }
 }
